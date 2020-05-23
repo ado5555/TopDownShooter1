@@ -7,6 +7,7 @@ public class shooting : MonoBehaviour {
 
     private GameManager m_GameManager;
     public float m_Speed;
+   
     // Use this for initialization
     void Start () {
         m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

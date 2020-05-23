@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
     {
 
 
-        m_TextPuntuacio.text = "Score: " + Mathf.Round(m_score);
-        m_TextVidas.text = "Vidas";
-        m_score += (Time.deltaTime);
+        //m_TextPuntuacio.text = "Score: " + Mathf.Round(m_score);
+        //m_TextVidas.text = "Vidas";
+        //m_score += (Time.deltaTime);
 
  
 

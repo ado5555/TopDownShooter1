@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public int position;
-
-
-
+    public GameObject bulletPrefab;
+    public PlayerPrefs player;
 
     private void Start()
     {
@@ -28,6 +27,14 @@ public class Movement : MonoBehaviour
 
         transform.Translate(x, y, 0);
 
+        if (Input.GetKey("space")) {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15.0f, 0.0f);
+        }
+
+
+
+
     }
 
 
@@ -41,6 +48,8 @@ public class Movement : MonoBehaviour
 
         }
     }
+
+
     
 
 

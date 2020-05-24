@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     public int position;
     public GameObject bulletPrefab;
-    public PlayerPrefs player;
+    public Animator animator;
 
     private void Start()
     {
@@ -15,6 +15,15 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        //animator.SetFloat("Horitzontal", Input.GetAxis("Horizontal")); TEST
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Magnitude", movement.magnitude);
+
+
+
 
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + horizontal * Time.deltaTime;

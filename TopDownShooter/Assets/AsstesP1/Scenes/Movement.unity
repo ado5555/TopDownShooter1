@@ -1194,6 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+  bulletPrefab: {fileID: 0}
 --- !u!1 &589786488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2131,7 @@ GameObject:
   - component: {fileID: 1331915887}
   - component: {fileID: 1331915886}
   - component: {fileID: 1331915885}
+  - component: {fileID: 1331915888}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2202,6 +2204,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1331915888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331915884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5d8d44d8c6d664ebb2eb92b558d477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 565019881}
+  m_CameraSpeed: 50
 --- !u!1 &1352238715
 GameObject:
   m_ObjectHideFlags: 0

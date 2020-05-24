@@ -13,6 +13,8 @@ TagManager:
   - Misile
   - Powerupmisile
   - Shield2
+  - Limit2
+  - Limit1
   layers:
   - Default
   - TransparentFX

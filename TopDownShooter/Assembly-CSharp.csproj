@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Cars.cs" />
     <Compile Include="Assets\Scripts\Enemies.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MOVIMIENTO2.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\shield.cs" />
@@ -613,12 +614,6 @@
     <Reference Include="UnityEngine.Monetization">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -630,12 +625,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
@@ -666,6 +655,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>C:/Users/usuario/Documents/GitHub/SHOOOOOOOOOOOTER/TopDownShooter1/TopDownShooter/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>

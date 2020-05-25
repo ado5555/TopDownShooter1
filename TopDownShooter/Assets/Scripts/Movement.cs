@@ -8,9 +8,11 @@ public class Movement : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletposition;
     public Animator animator;
-    
 
-    float CDMaxShoot = 1.5f;
+    public float m_ShootDirectionX;
+    public float m_ShootDirectionY;
+
+    float CDMaxShoot = 0.75f;
     public float CurrentCDShoot;
     public bool shoot = false;
 
@@ -43,11 +45,53 @@ public class Movement : MonoBehaviour
 
         transform.Translate(x, y, 0);
 
+        if ((Input.GetAxis("Horizontal") == 0) && (Input.GetAxis("Vertical") == 0))
+        {
+            m_ShootDirectionX = 15.0f;
+            m_ShootDirectionY = 0.0f;
+
+        }
+        else{ 
+        
+            if (Input.GetAxis("Horizontal") == 0)
+            {
+                m_ShootDirectionX = 0.0f;
+
+            }
+            else if (Input.GetAxis("Horizontal") > 0)
+            {
+                m_ShootDirectionX = 15.0f;
+
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                m_ShootDirectionX = -15.0f;
+
+            }
+
+            if (Input.GetAxis("Vertical") == 0)
+            {
+                m_ShootDirectionY = 0.0f;
+
+            }
+            else if (Input.GetAxis("Vertical") > 0)
+            {
+                m_ShootDirectionY = 15.0f;
+
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                m_ShootDirectionY = -15.0f;
+
+            }
+
+        }
+
         if ((Input.GetKey("space")) && (shoot == true))
         {
             
             GameObject bullet = Instantiate(bulletPrefab, bulletposition.transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15.0f, 0.0f);
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(m_ShootDirectionX, m_ShootDirectionY);
             shoot = false;
             CurrentCDShoot = 0;
                        
@@ -61,7 +105,7 @@ public class Movement : MonoBehaviour
 
         if (CurrentCDShoot >= CDMaxShoot)
         {
-            shoot = true;
+            shoot = true; 
 
         }
 

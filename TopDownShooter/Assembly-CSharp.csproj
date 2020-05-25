@@ -67,9 +67,9 @@
     <Compile Include="Assets\Scripts\ENEMY.cs" />
     <Compile Include="Assets\Scripts\ENEMYTD.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MOVIMIENTO2.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
+    <Compile Include="Assets\Scripts\ShootDestory.cs" />
     <Compile Include="Assets\Scripts\shield.cs" />
     <Compile Include="Assets\Scripts\shooting.cs" />
     <Reference Include="UnityEngine">

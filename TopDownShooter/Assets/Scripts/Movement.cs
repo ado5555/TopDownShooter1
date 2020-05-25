@@ -6,7 +6,14 @@ public class Movement : MonoBehaviour
 {
     public int position;
     public GameObject bulletPrefab;
+    public GameObject bulletposition;
     public Animator animator;
+    
+
+    float CDMaxShoot = 1.5f;
+    public float CurrentCDShoot;
+    public bool shoot = false;
+
 
     private void Start()
     {
@@ -36,12 +43,27 @@ public class Movement : MonoBehaviour
 
         transform.Translate(x, y, 0);
 
-        if (Input.GetKey("space")) {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        if ((Input.GetKey("space")) && (shoot == true))
+        {
+            
+            GameObject bullet = Instantiate(bulletPrefab, bulletposition.transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15.0f, 0.0f);
+            shoot = false;
+            CurrentCDShoot = 0;
+                       
         }
 
+        if (CurrentCDShoot < CDMaxShoot)
+        {
+            CurrentCDShoot += Time.deltaTime;
 
+        }
+
+        if (CurrentCDShoot >= CDMaxShoot)
+        {
+            shoot = true;
+
+        }
 
 
     }

@@ -8,6 +8,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    private static GameManager instance;
+
+    public static GameManager GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = new GameManager();
+        }
+        return instance;
+    }
+
+
+
     // Use this for initialization
 
     public Text m_TextPuntuacio;
@@ -28,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
 
         
-}
+    }
 
     // Update is called once per frame
     void Update()

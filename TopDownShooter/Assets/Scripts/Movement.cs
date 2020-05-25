@@ -16,6 +16,10 @@ public class Movement : MonoBehaviour
     public float CurrentCDShoot;
     public bool shoot = false;
 
+    public AudioClip gunshot;
+    public AudioClip zombieyell;
+    public AudioClip charactersteps;
+    public AudioSource soundfx;
 
     private void Start()
     {
@@ -31,7 +35,11 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Magnitude", movement.magnitude);
 
+        if ((Input.GetAxis("Horizontal") != 0) && (Input.GetAxis("Vertical") != 0)) {
+            soundfx.clip = charactersteps;
+            soundfx.Play();
 
+        }
 
 
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
@@ -94,6 +102,9 @@ public class Movement : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(m_ShootDirectionX, m_ShootDirectionY);
             shoot = false;
             CurrentCDShoot = 0;
+
+            soundfx.clip = gunshot;
+            soundfx.Play();
                        
         }
 
@@ -110,18 +121,6 @@ public class Movement : MonoBehaviour
         }
 
 
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       // if (collision.CompareTag("PowerMedkit"))
-        {
-          //  Destroy(collision.gameObject);
-            //m_GameManager.m_vidas += 1;
-            //m_GameManager.VidasAmbulancia();
-
-        }
     }
 
 

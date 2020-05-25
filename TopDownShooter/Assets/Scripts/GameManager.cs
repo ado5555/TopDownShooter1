@@ -12,20 +12,22 @@ public class GameManager : MonoBehaviour
 
     public Text m_TextPuntuacio;
     public Text m_TextVidas;
-    public GameObject[] m_AmbuVida;
     public GameObject m_GameRestart;
     public GameObject m_GameOverPanel;
 
 
     [HideInInspector] public float m_score;
-    public int m_vidas;
-    public int m_misiles;
+    public int m_vidas = 5;
+    public int m_balasmax;
+    public int m_balasactual;
+
+    public AudioClip Soundtrack;
     
 
     void Start()
     {
-         
 
+        
 }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
 
 
         //m_TextPuntuacio.text = "Score: " + Mathf.Round(m_score);
-        m_TextVidas.text = "Vidas" + m_AmbuVida;
+        m_TextVidas.text = "Vidas" + m_vidas;
         //m_score += (Time.deltaTime);
 
         if (m_vidas <= 0)

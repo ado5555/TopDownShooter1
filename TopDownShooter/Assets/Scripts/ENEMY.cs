@@ -7,7 +7,7 @@ public class ENEMY : MonoBehaviour
 
     public int m_speed = 2;
     public Vector3 Vectordirector;
-
+  
 
 
     // Start is called before the first frame update
@@ -22,7 +22,8 @@ public class ENEMY : MonoBehaviour
     {
         transform.position += Vectordirector * Time.deltaTime * m_speed;
     }
-
+    //soundfx.clip = zombieyell;
+   // soundfx.Play();
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.CompareTag("Limit1")))//toca con derecha

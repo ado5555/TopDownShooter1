@@ -25,14 +25,15 @@ public class GameManager : MonoBehaviour
 
     public Text m_TextPuntuacio;
     public Text m_TextVidas;
+    public Text m_TextBullets;
     public GameObject m_GameRestart;
     public GameObject m_GameOverPanel;
 
 
     [HideInInspector] public float m_score;
     public int m_vidas = 5;
-    public int m_balasmax;
-    public int m_balasactual;
+    public int m_balasmax = 30;
+    public int m_balasactual = 50;
 
     public AudioClip Soundtrack;
     
@@ -48,9 +49,10 @@ public class GameManager : MonoBehaviour
     {
 
 
-        //m_TextPuntuacio.text = "Score: " + Mathf.Round(m_score);
+       
         m_TextVidas.text = "Vidas" + m_vidas;
-        //m_score += (Time.deltaTime);
+        m_TextBullets.text = "Bullets" + m_balasactual;
+
 
         if (m_vidas <= 0)
         {

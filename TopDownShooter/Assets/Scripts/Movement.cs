@@ -6,7 +6,16 @@ public class Movement : MonoBehaviour
 {
     public int position;
     public GameObject bulletPrefab;
+    public GameObject bulletposition;
     public Animator animator;
+
+    public float m_ShootDirectionX;
+    public float m_ShootDirectionY;
+
+    float CDMaxShoot = 0.75f;
+    public float CurrentCDShoot;
+    public bool shoot = false;
+
 
     private void Start()
     {
@@ -36,12 +45,69 @@ public class Movement : MonoBehaviour
 
         transform.Translate(x, y, 0);
 
-        if (Input.GetKey("space")) {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15.0f, 0.0f);
+        if ((Input.GetAxis("Horizontal") == 0) && (Input.GetAxis("Vertical") == 0))
+        {
+            m_ShootDirectionX = 15.0f;
+            m_ShootDirectionY = 0.0f;
+
+        }
+        else{ 
+        
+            if (Input.GetAxis("Horizontal") == 0)
+            {
+                m_ShootDirectionX = 0.0f;
+
+            }
+            else if (Input.GetAxis("Horizontal") > 0)
+            {
+                m_ShootDirectionX = 15.0f;
+
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                m_ShootDirectionX = -15.0f;
+
+            }
+
+            if (Input.GetAxis("Vertical") == 0)
+            {
+                m_ShootDirectionY = 0.0f;
+
+            }
+            else if (Input.GetAxis("Vertical") > 0)
+            {
+                m_ShootDirectionY = 15.0f;
+
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                m_ShootDirectionY = -15.0f;
+
+            }
+
         }
 
+        if ((Input.GetKey("space")) && (shoot == true))
+        {
+            
+            GameObject bullet = Instantiate(bulletPrefab, bulletposition.transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(m_ShootDirectionX, m_ShootDirectionY);
+            shoot = false;
+            CurrentCDShoot = 0;
+                       
+        }
 
+        if (CurrentCDShoot < CDMaxShoot)
+        {
+            CurrentCDShoot += Time.deltaTime;
+
+        }
+
+        if (CurrentCDShoot >= CDMaxShoot)
+        {
+            shoot = true; 
+
+        }
 
 
     }

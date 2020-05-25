@@ -15,6 +15,7 @@ TagManager:
   - Shield2
   - Limit2
   - Limit1
+  - HURT
   layers:
   - Default
   - TransparentFX

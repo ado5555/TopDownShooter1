@@ -9,14 +9,23 @@ public class ENEMYTD : MonoBehaviour
     GameObject m_Character;
     bool touch = false;
 
+    GameObject m_Bullet;
+
     public int m_speed = 2;
     public Vector3 Vectordirector;
+
+    public AudioSource soundfx;
+    public AudioClip zombieyell;
 
 
     // Start is called before the first frame update
     void Start()
     {
         m_Character = GameObject.FindGameObjectWithTag("Character");
+        m_Bullet = GameObject.FindGameObjectWithTag("Misile");
+
+        soundfx = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -25,7 +34,8 @@ public class ENEMYTD : MonoBehaviour
         if (touch == true)
         {
             m_Character.transform.position = m_InitialPosition.transform.position; //Initial position es un empty game object solo para poder usar la posicion esa para hacer tp una vez mueres.
-
+            
+            GameManager.GetInstance().m_vidas += -1;
             touch = false;
 
         }
@@ -49,8 +59,18 @@ public class ENEMYTD : MonoBehaviour
         }
         else if (collision.CompareTag("Character")) //enemy toca con character
         {
-            GameManager.GetInstance().m_vidas += -1;
+            
+            
             touch = true;
+
+        }
+        else if (collision.CompareTag("Misile")) //enemy toca con bullet
+        {
+            
+            GameManager.GetInstance().m_balasactual += -1;
+            GameManager.GetInstance().m_score += 10;
+            Destroy(this.gameObject);
+            Destroy(m_Bullet.gameObject);
 
         }
 

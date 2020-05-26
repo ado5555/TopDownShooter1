@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-       // m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+       
         
     }
     private void Update()
@@ -97,14 +97,14 @@ public class Movement : MonoBehaviour
 
         if ((Input.GetKey("space")) && (shoot == true))
         {
-            
+            soundfx.clip = gunshot;
+            soundfx.Play();
             GameObject bullet = Instantiate(bulletPrefab, bulletposition.transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(m_ShootDirectionX, m_ShootDirectionY);
             shoot = false;
             CurrentCDShoot = 0;
 
-            soundfx.clip = gunshot;
-            soundfx.Play();
+            
                        
         }
 
